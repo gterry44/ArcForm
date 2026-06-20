@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-amber-50: #fffdf0;
+  --color-amber-100: #fbf6cd;
+  --color-amber-200: #f7eb9c;
+  --color-amber-300: #f1db63;
+  --color-amber-400: #ffd700;
+  --color-amber-500: #d4af37;
+  --color-amber-600: #b79029;
+  --color-amber-700: #916e1f;
+  --color-amber-800: #74561b;
+  --color-amber-900: #5a4218;
+  --color-amber-950: #1a1405;
+
+  --color-yellow-50: #fffdf0;
+  --color-yellow-100: #fbf6cd;
+  --color-yellow-250: #f7eb9c;
+  --color-yellow-300: #f1db63;
+  --color-yellow-400: #ffd700;
+  --color-yellow-500: #d4af37;
+  --color-yellow-550: #be972b;
+  --color-yellow-600: #b79029;
+  --color-yellow-950: #1a1405;
+}
+
+/* Base style resets and beautiful scrollbar */
+html, body {
+  background-color: #08090a;
+  color: #f3f4f6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 10% 30%, rgba(12, 13, 16, 0.4) 0%, transparent 40%);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272a34;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f4456;
+}
+
+/* Animations & glassmorphism custom classes */
+.glass-panel {
+  background: rgba(18, 19, 23, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.glow-zinc {
+  box-shadow: 0 0 20px rgba(161, 161, 170, 0.08);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.05); }
+}
+
+.glow-backdrop {
+  position: absolute;
+  filter: blur(120px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-slow 8s infinite ease-in-out;
+}
